@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Example: 0300-1234567 → 923001234567
   const btn = document.getElementById("whatsapp-btn");
   if (btn) {
-    btn.href = "https://wa.me/92XXXXXXXXXX";
+    btn.href = "https://wa.me/923709190104";
   }
 
 });
