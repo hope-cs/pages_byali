@@ -1,0 +1,282 @@
+/* ============================================================
+   ANDAAZ BRIDAL WEAR — STYLESHEET
+   
+   QUICK REFERENCE FOR NEXT CLIENT:
+   Search "CHANGE:" to find every color/style to update
+   ============================================================ */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ============================================================
+   CHANGE: BACKGROUND COLOR
+   This shows if background image fails to load
+   Current: dark red #1a0a0a
+   For academies : #0d1b2a (dark navy)
+   For clinics   : #0a1a2a (dark blue)
+   For salons    : #1a0a10 (dark rose)
+   ============================================================ */
+:root {
+  --bg-color:         #1a0a0a;
+
+  /* ============================================================
+     CHANGE: BUTTON COLORS
+     Current: dark red + soft gold (bridal theme)
+     For academies : --btn-bg: #0d1b2a  --btn-text: #e8a020
+     For clinics   : --btn-bg: #1a6eb5  --btn-text: #ffffff
+     For salons    : --btn-bg: #c2636a  --btn-text: #ffffff
+     ============================================================ */
+  --btn-bg:           #8B0000;
+  --btn-text:         #F5D78E;
+
+  /* ============================================================
+     CHANGE: ACCENT COLOR
+     Used for service card left border and highlights
+     Current: dark red
+     ============================================================ */
+  --accent:           #8B0000;
+
+  /* ============================================================
+     CHANGE: TAGLINE COLOR
+     Current: soft gold #f5d78e
+     For non-bridal: #ffffff or any light color
+     ============================================================ */
+  --tagline-color:    #f5d78e;
+
+  /* ============================================================
+     CHANGE: OVERLAY DARKNESS
+     Controls how dark the background image overlay is
+     0.3 = light overlay | 0.45 = medium | 0.65 = heavy
+     Increase if text is hard to read over background image
+     ============================================================ */
+  --overlay-opacity:  0.45;
+
+  /* Fixed values — no need to change these */
+  --white:            #ffffff;
+  --text-main:        rgba(255, 255, 255, 0.9);
+  --text-muted:       rgba(255, 255, 255, 0.85);
+  --block-bg:         rgba(255, 255, 255, 0.08);
+  --block-border:     rgba(255, 255, 255, 0.1);
+  --service-item-bg:  rgba(255, 255, 255, 0.05);
+}
+
+/* ── BODY & BACKGROUND ── */
+body {
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: var(--bg-color);
+
+  /* ============================================================
+     CHANGE: BACKGROUND IMAGE
+     Replace the URL with the new client's background image.
+     To use a local file: url('your-image.jpg')
+     To use an online image: url('https://...')
+     To remove image: delete the background-image line entirely
+     ============================================================ */
+  background-image: url('bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Dark overlay on top of background image */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, var(--overlay-opacity));
+  z-index: 0;
+}
+
+/* ── MAIN CARD ── */
+.card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px;
+  min-height: 100vh;
+  padding: 40px 24px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── HEADER ── */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.logo-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  /* CHANGE: Logo circle border color — matches tagline color usually */
+  border: 2px solid rgba(184, 154, 106, 0.6);
+  overflow: hidden;
+  margin-bottom: 16px;
+  background: #2a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Fallback letter if no logo image */
+.logo-fallback {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-style: italic;
+  /* CHANGE: Fallback letter color */
+  color: #b89a6a;
+}
+
+/* CHANGE: Client name color — usually white */
+.client-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+/* CHANGE: Tagline color — uses --tagline-color variable above */
+.client-tagline {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--tagline-color);
+  letter-spacing: 0.3px;
+}
+
+/* ── SECTION BLOCKS ── */
+.block {
+  width: 100%;
+  background: var(--block-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--block-border);
+  border-radius: 12px;
+  padding: 24px 20px;
+  margin-bottom: 16px;
+  color: var(--white);
+}
+
+.block-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.block-text {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* ── SERVICES LIST ── */
+.services-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.services-list li {
+  font-size: 14px;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: var(--service-item-bg);
+  border-radius: 8px;
+  /* CHANGE: Left border color on service items — uses accent color */
+  border-left: 3px solid var(--accent);
+}
+
+.services-list li .emoji {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* ── WHY CHOOSE US LIST ── */
+.why-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.why-list li {
+  font-size: 14px;
+  color: var(--text-main);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+}
+
+.why-list li .check {
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── WHATSAPP BUTTON ── */
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px 24px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  margin-top: 8px;
+  transition: opacity 0.2s, transform 0.2s;
+  /* CHANGE: Button colors — uses variables defined at top */
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+}
+
+.whatsapp-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.whatsapp-icon {
+  width: 22px;
+  height: 22px;
+  /* CHANGE: WhatsApp icon color — usually matches btn-text */
+  fill: var(--btn-text);
+}
+
+/* ── FOOTER NOTE ── */
+.footer-note {
+  margin-top: 24px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 520px) {
+  .card { padding: 32px 16px 48px; }
+  .client-name { font-size: 22px; }
+}
