@@ -31,7 +31,8 @@
            Save logo as logo.png in same folder for easy use: src="logo.png"
            If no logo available, delete the img tag — fallback shows automatically
            ============================================================ -->
-      <img id="logo-img" src="logo.png" alt="Logo"/>
+      <!-- <img id="logo-img" src="logo.png" alt="Logo"/> -->
+      <img id="logo-img" src="logo.png" alt="Logo" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';"/>
       <div id="logo-fallback" class="logo-fallback" style="display:none">A</div>
     </div>
 
