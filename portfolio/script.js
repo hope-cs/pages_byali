@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
       loop: true,
       showCursor: true,
       cursorChar: "|",
+       contentType: "null",
     });
   }
 
