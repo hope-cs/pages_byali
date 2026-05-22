@@ -19,12 +19,11 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.getElementById("typed-text")) {
     new Typed("#typed-text", {
       strings: [
-      "Salons & Parlours",
-      "Boutiques & Tailors",
-      "Gyms & Fitness Centers",
-      "Academies & Schools",
-      "Clinics & Hospitals",
-      "Pakistani Businesses",
+      "Salons and Parlours",
+      "Boutiques and Tailors",
+      "Gyms and Fitness Centers",
+      "Academies and Schools",
+      "Clinics and Hospitals",
     ],
       typeSpeed: 50,
       backSpeed: 30,
