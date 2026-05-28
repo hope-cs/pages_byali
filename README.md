@@ -4,3 +4,4 @@
 ## https://hope-cs.github.io/pages_byali/anmol-tailor/
 ## https://hope-cs.github.io/pages_byali/Fitness-Zone-LG/
 ## https://hope-cs.github.io/pages_byali/portfolio/
+## https://hope-cs.github.io/pages_byali/amna-salon/
